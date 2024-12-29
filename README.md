@@ -1,2 +1,6 @@
 # sudo-rsingh.github.io
-My Personal Site
+
+## Preious attempts
+
+- https://github.com/sudo-rsingh/greatrsingh-blog
+- https://github.com/sudo-rsingh/blog
