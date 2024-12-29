@@ -44,11 +44,22 @@ section p, section ul li {
     font-size: 1.25rem;
     line-height: 1.8rem;
 }
-.about {
+main h1 {
     text-align: center;
 }
-.news p {
-    line-height: 0.5rem;
+main p {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+}
+main br {
+    display: block;
+    margin: 10px 0;
+}
+main .next-button {
+    float: right;
+}
+.about {
+    text-align: center;
 }
 .papers ul, .projects ul, .recent-posts ul {
     padding: 0;
