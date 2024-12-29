@@ -1,0 +1,73 @@
+body {
+    font-family: monospace;
+    background-color: #ffffff;
+    color: #333;
+    margin: 1rem auto;
+    max-width: 800px;
+    align-self: center;
+}
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+header h1 {
+    font-size: 2rem;
+}
+header h1 a {
+    color: #333;
+    text-decoration: none;
+}
+nav a {
+    margin: 0 0.5rem;
+    font-size: 1.25rem;
+}
+.post-header h2 {
+    font-size: 1.35rem;
+    font-weight: normal;
+    line-height: 0.5rem;
+    text-align: center;
+    color:rgb(70, 70, 70);
+}
+.post-header p {
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(165, 165, 165);
+    margin-bottom: 3rem;
+}
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+}
+section p, section ul li {
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+}
+.about {
+    text-align: center;
+}
+.papers ul, .projects ul, .recent-posts ul {
+    padding: 0;
+}
+.papers li, .projects li, .recent-posts li {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+.papers li p.subtitle, .recent-posts li p.subtitle, .projects li p.subtitle {
+    margin: 1rem 0 0 0;
+}
+.content {
+    font-size: 1rem;
+}
+.content blockquote {
+    margin: 1rem;
+    font-style: italic;
+}
+.content h2 {
+    font-size: 1.25rem;
+}
+footer {
+    text-align: center;
+    font-size: 1rem;
+}
