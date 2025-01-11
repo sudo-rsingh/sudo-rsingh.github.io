@@ -32,7 +32,7 @@ const PersonalWebsite = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">About Me</h2>
           <div className="bg-white rounded-lg shadow p-6">
             <p className="text-gray-600">
-              I'm a research engineer focusing on the intersection of machine learning
+              I am a research engineer focusing on the intersection of machine learning
               and systems engineering. My work aims to make AI systems more efficient
               and accessible. Currently pursuing my PhD at Tech University, I combine
               academic research with practical engineering solutions.
