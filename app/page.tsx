@@ -1,4 +1,4 @@
-import PersonalWebsite from "@/components/ui/PersonalWebsite";
+import PersonalWebsite from "@/components/PersonalWebsite";
 
 export default function Home() {
   return <PersonalWebsite />;
