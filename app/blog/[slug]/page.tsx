@@ -1,23 +1,35 @@
+import { getPostBySlug } from '@/lib/mdx';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { notFound } from 'next/navigation';
+
 interface BlogPostParams {
-    params: {
-      slug: string;
-    };
-  }
+  params: {
+    slug: string;
+  };
+}
+
+export default function BlogPost({ params }: BlogPostParams) {
+  const post = getPostBySlug(params.slug);
   
-  export default function BlogPost({ params }: BlogPostParams) {
-    // In a real app, you'd fetch the post data based on the slug
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <article className="prose lg:prose-xl">
-          <h1>Blog Post Title</h1>
-          <div className="text-gray-600 mb-8">
-            January 10, 2025 • 5 min read
-          </div>
-          <div>
-            {/* Blog post content goes here */}
-            <p>Your blog post content...</p>
-          </div>
-        </article>
-      </div>
-    );
+  if (!post) {
+    notFound();
   }
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-12">
+      <article className="prose lg:prose-xl mx-auto">
+        <h1>{post.frontMatter.title}</h1>
+        <div className="text-gray-600 mb-8">
+          {post.frontMatter.date}
+          {post.frontMatter.readTime && (
+            <>
+              <span className="mx-2">•</span>
+              {post.frontMatter.readTime}
+            </>
+          )}
+        </div>
+        <MDXRemote source={post.content} />
+      </article>
+    </div>
+  );
+}
