@@ -28,7 +28,8 @@ def markdown_to_html_converter(markdown_text):
 
 def wrap_with_html_structure(body_content, title="Document"):
     """Wrap the content with HTML structure including <head> and <body>."""
-    return f"""<!DOCTYPE html>
+    return f"""
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
