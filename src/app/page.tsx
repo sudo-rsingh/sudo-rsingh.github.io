@@ -1,7 +1,7 @@
 import React from 'react';
-import { Github, Linkedin, Mail, FileCode, Brain, Server } from 'lucide-react';
+import { Github, Linkedin, Mail, FileCode, Brain, Server, Pen } from 'lucide-react';
 
-// Simulated data fetching function
+// Simulated data fetching functions
 function getProjectData() {
   return [
     {
@@ -28,8 +28,35 @@ function getProjectData() {
   ];
 }
 
+function getWritingData() {
+  return [
+    {
+      id: 1,
+      title: "The Future of Machine Learning in Software Engineering",
+      description: "An in-depth exploration of how machine learning is transforming software development processes and methodologies.",
+      technologies: ["ML", "Software Engineering", "Technology Trends"],
+      link: "#"
+    },
+    {
+      id: 2,
+      title: "Distributed Systems: Designing for Scalability",
+      description: "Insights into architectural patterns and best practices for building robust, scalable distributed systems.",
+      technologies: ["System Design", "Architecture", "Scalability"],
+      link: "#"
+    },
+    {
+      id: 3,
+      title: "AI Ethics: Navigating the Moral Landscape of Machine Intelligence",
+      description: "A critical examination of ethical considerations in artificial intelligence development and deployment.",
+      technologies: ["AI Ethics", "Artificial Intelligence", "Technology Policy"],
+      link: "#"
+    }
+  ];
+}
+
 const Portfolio = () => {
   const projects = getProjectData();
+  const writings = getWritingData();
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -41,6 +68,7 @@ const Portfolio = () => {
             <a href="#about" className="px-2 sm:px-0 hover:text-blue-600">About</a>
             <a href="#projects" className="px-2 sm:px-0 hover:text-blue-600">Projects</a>
             <a href="#skills" className="px-2 sm:px-0 hover:text-blue-600">Skills</a>
+            <a href="#writings" className="px-2 sm:px-0 hover:text-blue-600">Writings</a>
             <a href="#contact" className="px-2 sm:px-0 hover:text-blue-600">Contact</a>
           </nav>
         </div>
@@ -54,10 +82,10 @@ const Portfolio = () => {
             Transforming complex problems into elegant software solutions using cutting-edge machine learning and distributed systems.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
-            <a href="https://github.com/username" target="_blank" className="text-gray-700 hover:text-black">
+            <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black">
               <Github size={32} />
             </a>
-            <a href="https://linkedin.com/in/username" target="_blank" className="text-gray-700 hover:text-blue-600">
+            <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600">
               <Linkedin size={32} />
             </a>
             <a href="mailto:alex.rodriguez@email.com" className="text-gray-700 hover:text-red-600">
@@ -67,7 +95,7 @@ const Portfolio = () => {
         </div>
         <div className="w-full md:w-1/2 flex justify-center">
           <img 
-            src="https://placehold.co/400" 
+            src="https://placehold.co/400x400" 
             alt="Alex Rodriguez" 
             className="w-64 h-64 md:w-96 md:h-96 rounded-full shadow-lg object-cover"
           />
@@ -121,9 +149,45 @@ const Portfolio = () => {
                   <a 
                     href={project.githubLink} 
                     target="_blank" 
+                    rel="noopener noreferrer"
                     className="text-blue-600 hover:underline flex items-center"
                   >
                     <Github className="mr-2" size={20} /> View on GitHub
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Writings Section */}
+      <section id="writings" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10">My Writings</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {writings.map((writing) => (
+              <div key={writing.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="p-6">
+                  <h3 className="font-bold text-xl mb-2">{writing.title}</h3>
+                  <p className="text-gray-600 mb-4">{writing.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {writing.technologies.map((topic) => (
+                      <span 
+                        key={topic} 
+                        className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                  <a 
+                    href={writing.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline flex items-center"
+                  >
+                    <Pen className="mr-2" size={20} /> Read Article
                   </a>
                 </div>
               </div>
