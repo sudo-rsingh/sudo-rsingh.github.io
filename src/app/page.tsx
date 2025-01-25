@@ -35,25 +35,25 @@ const Portfolio = () => {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
       <header className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Alex Rodriguez</h1>
-          <nav className="flex space-x-4">
-            <a href="#about" className="hover:text-blue-600">About</a>
-            <a href="#projects" className="hover:text-blue-600">Projects</a>
-            <a href="#skills" className="hover:text-blue-600">Skills</a>
-            <a href="#contact" className="hover:text-blue-600">Contact</a>
+        <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-0 text-center sm:text-left w-full sm:w-auto">Alex Rodriguez</h1>
+          <nav className="flex flex-wrap justify-center sm:justify-end space-x-2 sm:space-x-4 w-full sm:w-auto">
+            <a href="#about" className="px-2 sm:px-0 hover:text-blue-600">About</a>
+            <a href="#projects" className="px-2 sm:px-0 hover:text-blue-600">Projects</a>
+            <a href="#skills" className="px-2 sm:px-0 hover:text-blue-600">Skills</a>
+            <a href="#contact" className="px-2 sm:px-0 hover:text-blue-600">Contact</a>
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 py-16 flex items-center">
-        <div className="w-1/2">
-          <h2 className="text-5xl font-bold mb-4">Full Stack ML Engineer</h2>
-          <p className="text-xl text-gray-600 mb-6">
+      <section className="max-w-6xl mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center">
+        <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Full Stack ML Engineer</h2>
+          <p className="text-base md:text-xl text-gray-600 mb-6">
             Transforming complex problems into elegant software solutions using cutting-edge machine learning and distributed systems.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex justify-center md:justify-start space-x-4">
             <a href="https://github.com/username" target="_blank" className="text-gray-700 hover:text-black">
               <Github size={32} />
             </a>
@@ -65,11 +65,11 @@ const Portfolio = () => {
             </a>
           </div>
         </div>
-        <div className="w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center">
           <img 
             src="https://placehold.co/400" 
             alt="Alex Rodriguez" 
-            className="w-96 h-96 rounded-full shadow-lg object-cover"
+            className="w-64 h-64 md:w-96 md:h-96 rounded-full shadow-lg object-cover"
           />
         </div>
       </section>
@@ -78,7 +78,7 @@ const Portfolio = () => {
       <section id="skills" className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-10">Technical Skills</h2>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div className="bg-gray-100 p-6 rounded-lg text-center">
               <FileCode size={48} className="mx-auto mb-4 text-blue-600" />
               <h3 className="font-bold text-xl mb-2">Software Development</h3>
@@ -102,7 +102,7 @@ const Portfolio = () => {
       <section id="projects" className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-10">Recent Projects</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="p-6">
@@ -136,12 +136,12 @@ const Portfolio = () => {
       <section id="contact" className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-base md:text-xl text-gray-600 mb-8">
             Interested in collaborating or discussing innovative tech solutions? Reach out!
           </p>
           <a 
             href="mailto:alex.rodriguez@email.com" 
-            className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg hover:bg-blue-700 transition"
           >
             Contact Me
           </a>
@@ -151,7 +151,7 @@ const Portfolio = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-6">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>&copy; 2024 Alex Rodriguez. All Rights Reserved.</p>
+          <p className="text-sm md:text-base">&copy; 2024 Alex Rodriguez. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
