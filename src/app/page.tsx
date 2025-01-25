@@ -1,93 +1,161 @@
-"use client"
-import React, { useState, JSX } from 'react';
-import { Github, Linkedin, Mail, Code, User, Briefcase } from 'lucide-react';
+import React from 'react';
+import { Github, Linkedin, Mail, FileCode, Brain, Server } from 'lucide-react';
 
-type Section = 'about' | 'skills' | 'projects';
+// Simulated data fetching function
+function getProjectData() {
+  return [
+    {
+      id: 1,
+      title: "Machine Learning Stock Predictor",
+      description: "Developed a deep learning model using LSTM networks to predict stock market trends with 85% accuracy.",
+      technologies: ["Python", "TensorFlow", "Pandas", "Scikit-Learn"],
+      githubLink: "https://github.com/username/stock-predictor"
+    },
+    {
+      id: 2,
+      title: "Distributed Microservices Architecture",
+      description: "Designed a scalable microservices system with Docker, Kubernetes, and gRPC for enhanced performance.",
+      technologies: ["Docker", "Kubernetes", "gRPC", "Go", "Redis"],
+      githubLink: "https://github.com/username/microservices-arch"
+    },
+    {
+      id: 3,
+      title: "AI-Powered Code Assistant",
+      description: "Created an intelligent code generation tool using transformer models and advanced NLP techniques.",
+      technologies: ["TypeScript", "React", "OpenAI", "Hugging Face"],
+      githubLink: "https://github.com/username/code-assistant"
+    }
+  ];
+}
 
-const PersonalSite = () => {
-  const [activeSection, setActiveSection] = useState<Section>('about');
-
-  const sections = {
-    about: (
-      <div>
-        <h3 className="text-xl font-semibold mb-4">About Me</h3>
-        <p>Software engineer passionate about building innovative digital solutions. With 5+ years of experience in web development, I specialize in creating scalable and user-friendly applications.</p>
-      </div>
-    ),
-    skills: (
-      <div>
-        <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
-        <div className="grid grid-cols-2 gap-2">
-          <div>
-            <strong>Frontend:</strong> React, Vue, Tailwind
-          </div>
-          <div>
-            <strong>Backend:</strong> Node.js, Python, Django
-          </div>
-        </div>
-      </div>
-    ),
-    projects: (
-      <div>
-        <h3 className="text-xl font-semibold mb-4">Key Projects</h3>
-        <ul className="space-y-2">
-          <li>
-            <strong>Personal Dashboard</strong> - Full-stack app with real-time data visualization
-          </li>
-          <li>
-            <strong>E-commerce Platform</strong> - Microservices architecture with payment integration
-          </li>
-        </ul>
-      </div>
-    )
-  };
+const Portfolio = () => {
+  const projects = getProjectData();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex justify-center items-center p-4">
-      <div className="max-w-2xl w-full bg-white shadow-2xl rounded-xl overflow-hidden">
-        <div className="bg-blue-600 text-white p-6 flex items-center">
-          <img 
-            src="/api/placeholder/120/120" 
-            alt="Profile" 
-            className="rounded-full mr-6 border-4 border-white"
-          />
-          <div>
-            <h1 className="text-3xl font-bold">Sarah Chen</h1>
-            <p className="text-blue-100">Full Stack Developer | Tech Innovator</p>
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Header */}
+      <header className="bg-white shadow-md">
+        <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+          <h1 className="text-3xl font-bold">Alex Rodriguez</h1>
+          <nav className="flex space-x-4">
+            <a href="#about" className="hover:text-blue-600">About</a>
+            <a href="#projects" className="hover:text-blue-600">Projects</a>
+            <a href="#skills" className="hover:text-blue-600">Skills</a>
+            <a href="#contact" className="hover:text-blue-600">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto px-4 py-16 flex items-center">
+        <div className="w-1/2">
+          <h2 className="text-5xl font-bold mb-4">Full Stack ML Engineer</h2>
+          <p className="text-xl text-gray-600 mb-6">
+            Transforming complex problems into elegant software solutions using cutting-edge machine learning and distributed systems.
+          </p>
+          <div className="flex space-x-4">
+            <a href="https://github.com/username" target="_blank" className="text-gray-700 hover:text-black">
+              <Github size={32} />
+            </a>
+            <a href="https://linkedin.com/in/username" target="_blank" className="text-gray-700 hover:text-blue-600">
+              <Linkedin size={32} />
+            </a>
+            <a href="mailto:alex.rodriguez@email.com" className="text-gray-700 hover:text-red-600">
+              <Mail size={32} />
+            </a>
           </div>
         </div>
+        <div className="w-1/2 flex justify-center">
+          <img 
+            src="https://placehold.co/400" 
+            alt="Alex Rodriguez" 
+            className="w-96 h-96 rounded-full shadow-lg object-cover"
+          />
+        </div>
+      </section>
 
-        <div className="p-6">
-          <div className="flex justify-around mb-6 border-b pb-2">
-            {[
-              { icon: <User />, name: 'about' as Section },
-              { icon: <Code />, name: 'skills' as Section },
-              { icon: <Briefcase />, name: 'projects' as Section }
-            ].map(({icon, name}) => (
-              <button 
-                key={name}
-                onClick={() => setActiveSection(name)}
-                className={`flex items-center space-x-2 ${activeSection === name ? 'text-blue-600 font-bold' : 'text-gray-500'}`}
-              >
-                {icon}
-                <span className="capitalize">{name}</span>
-              </button>
+      {/* Skills Section */}
+      <section id="skills" className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10">Technical Skills</h2>
+          <div className="grid grid-cols-3 gap-8">
+            <div className="bg-gray-100 p-6 rounded-lg text-center">
+              <FileCode size={48} className="mx-auto mb-4 text-blue-600" />
+              <h3 className="font-bold text-xl mb-2">Software Development</h3>
+              <p>Python, JavaScript, TypeScript, Go, Java</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg text-center">
+              <Brain size={48} className="mx-auto mb-4 text-green-600" />
+              <h3 className="font-bold text-xl mb-2">Machine Learning</h3>
+              <p>TensorFlow, PyTorch, Scikit-Learn, Keras</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg text-center">
+              <Server size={48} className="mx-auto mb-4 text-purple-600" />
+              <h3 className="font-bold text-xl mb-2">DevOps & Cloud</h3>
+              <p>Docker, Kubernetes, AWS, GCP, CI/CD</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10">Recent Projects</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="p-6">
+                  <h3 className="font-bold text-xl mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech} 
+                        className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <a 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    className="text-blue-600 hover:underline flex items-center"
+                  >
+                    <Github className="mr-2" size={20} /> View on GitHub
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
-
-          <div className="min-h-[200px]">
-            {sections[activeSection]}
-          </div>
-
-          <div className="flex justify-center space-x-4 mt-6 border-t pt-4">
-            <a href="#" className="text-blue-600 hover:text-blue-800"><Github size={24} /></a>
-            <a href="#" className="text-blue-600 hover:text-blue-800"><Linkedin size={24} /></a>
-            <a href="#" className="text-blue-600 hover:text-blue-800"><Mail size={24} /></a>
-          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Interested in collaborating or discussing innovative tech solutions? Reach out!
+          </p>
+          <a 
+            href="mailto:alex.rodriguez@email.com" 
+            className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg hover:bg-blue-700 transition"
+          >
+            Contact Me
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-6">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p>&copy; 2024 Alex Rodriguez. All Rights Reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };
 
-export default PersonalSite;
+export default Portfolio;
