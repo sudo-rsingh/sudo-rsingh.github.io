@@ -3,122 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakshit Kumar Singh - Resume</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Rakshit Kumar Singh</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #f8f9fa;
-            --text-color: #2c3e50;
-        }
-        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            text-align: center;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
         }
-
         .container {
+            width: 95%;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem;
         }
-
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
+            margin-bottom: 20px;
+            padding: 20px 0;
         }
-
         .header-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
         .contact-info {
-            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            margin-right: 1.5rem;
-        }
-
-        .contact-info a:hover {
-            color: var(--secondary-color);
-        }
-
         section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: yellow;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
         }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
+        .education-item, .experience-item, .achievement-item, .project-item {
+            margin-bottom: 15px;
         }
-
-        .experience-item, .education-item, .project-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-item h3, .project-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
         }
-
         .skill-category {
-            margin-bottom: 1rem;
+            flex: 1;
+            min-width: 150px;
+            text-align: left;
+            padding-left: 30px;
+            list-style-position: outside;
         }
-
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
         ul {
-            list-style-type: none;
             padding-left: 0;
+            list-style-position: inside;
         }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        .achievement-item {
-            margin-bottom: 1rem;
-        }
-
-        .achievement-item h3 {
-            margin-bottom: 0.25rem;
+        h1, h2, h3 {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -127,64 +69,16 @@
         <div class="header-content">
             <h1>Rakshit Kumar Singh</h1>
             <div class="contact-info">
-                <a href="mailto:rakshitsingh421@gmail.com"><i class="fas fa-envelope"></i> rakshitsingh421@gmail.com</a>
-                <a href="tel:+916203403692"><i class="fas fa-phone"></i> +91 6203403692</a>
-                <a href="https://github.com/rakshit-ai"><i class="fab fa-github"></i> rakshit-ai</a>
-                <a href="https://github.com/GreatRSingh"><i class="fab fa-github"></i> GreatRSingh</a>
+                <a href="mailto:rakshitsingh421@gmail.com">rakshitsingh421@gmail.com</a>
+                <a href="tel:+916203403692">+91 6203403692</a>
+                <a href="https://www.linkedin.com/in/rakshit-singh-ai/">LinkedIn</a>
+                <a href="https://github.com/GreatRSingh">GitHub</a>
             </div>
         </div>
     </header>
-
+      
     <div class="container">
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Bachelor of Technology in Mining Engineering</h3>
-                <div class="date">National Institute of Technology, Rourkela (Nov 2022 – June 2026)</div>
-            </div>
-            <div class="education-item">
-                <h3>Bachelor of Science in Data Science</h3>
-                <div class="date">Indian Institute of Technology, Madras (Jan 2024 – present)</div>
-            </div>
-        </section>
 
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>C++</li>
-                        <li>C</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks</h3>
-                    <ul>
-                        <li>PyTorch</li>
-                        <li>TensorFlow</li>
-                        <li>Pandas</li>
-                        <li>Numpy</li>
-                        <li>SciPy</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>Transformers</li>
-                        <li>AWS</li>
-                        <li>DuckDB</li>
-                        <li>Linux</li>
-                        <li>GitHub</li>
-                        <li>PyTest</li>
-                        <li>CI/CD</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
         <section id="experience">
             <h2>Experience</h2>
@@ -260,14 +154,77 @@
             </div>
         </section>
 
-        <section id="leadership">
-            <h2>Leadership</h2>
+
+
+        <section id="community">
+            <h2>Community Work</h2>
             <div class="experience-item">
                 <h3>President - Machine Learning For Everyone</h3>
                 <div class="date">NIT Rourkela (August 2023 – Present)</div>
                 <p>Made a vibrant group of ML/AI developers, helped them in participating in competitions and promoted ML research</p>
             </div>
+            <div class="experience-item">
+                <h3>Founder - Linux Labs</h3>
+                <div class="date">NIT Rourkela (September 2024 – Present)</div>
+                <p>Built a close knit community of people who loved technology and were able to take initiatives.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Contributor - DeepChem</h3>
+                <div class="date">DeepChem (May 2023 – Present)</div>
+                <p>Worked with amazing peoples in DeepChem to build systems that could be used to accelerate chemistry and biology research.</p>
+            </div>
         </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Technology in Mining Engineering</h3>
+                <div class="date">National Institute of Technology, Rourkela (Nov 2022 – June 2026)</div>
+            </div>
+            <div class="education-item">
+                <h3>Bachelor of Science in Data Science</h3>
+                <div class="date">Indian Institute of Technology, Madras (Jan 2024 – present)</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>C</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <ul>
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>Pandas</li>
+                        <li>Numpy</li>
+                        <li>SciPy</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Transformers</li>
+                        <li>AWS</li>
+                        <li>DuckDB</li>
+                        <li>Linux</li>
+                        <li>GitHub</li>
+                        <li>PyTest</li>
+                        <li>CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     </div>
 </body>
 </html>
