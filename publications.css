@@ -1,0 +1,117 @@
+.publications-container {
+    margin-top: 30px;
+}
+
+.publication-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    background: var(--section-bg);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+.publication-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.publication-item {
+    background: var(--section-bg);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: var(--section-shadow);
+    border: 1px solid var(--section-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.publication-title {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.publication-authors {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.publication-venue {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.publication-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.publication-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 4px 12px;
+    border-radius: 15px;
+    background-color: rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+}
+
+.publication-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.publication-year {
+    display: inline-block;
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.publication-abstract {
+    color: #666;
+    font-size: 0.95em;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .publication-item {
+        padding: 20px;
+    }
+    
+    .publication-links {
+        flex-wrap: wrap;
+    }
+} 
