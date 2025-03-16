@@ -68,12 +68,15 @@ h1 {
 
 .nav-bar {
     background-color: var(--primary-color);
-    padding: 12px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border-bottom: 2px solid var(--accent-color);
+    height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-content {
@@ -83,6 +86,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .nav-links {
@@ -90,6 +94,8 @@ h1 {
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .nav-links a {
@@ -103,6 +109,9 @@ h1 {
     position: relative;
     font-size: 0.95em;
     white-space: nowrap;
+    height: 24px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a:hover {
@@ -135,7 +144,8 @@ h1 {
 
 @media (max-width: 768px) {
     .nav-bar {
-        padding: 8px 0;
+        height: auto;
+        padding: 10px 0;
     }
 
     .nav-content {
@@ -150,6 +160,7 @@ h1 {
     .nav-links a {
         padding: 6px 10px;
         font-size: 0.85em;
+        height: 20px;
     }
 
     .container {
@@ -208,6 +219,7 @@ section {
     margin-bottom: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    scroll-margin-top: 80px;
 }
 
 h2 {
